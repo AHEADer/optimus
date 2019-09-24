@@ -1,8 +1,8 @@
 # build based on official MXNet 0.1 GPU image, preparing all necessary init scripts and training examples.
 
-FROM xxx/mxnet-gpu
+FROM yhpeng/mxnet-gpu
 
-MAINTAINER xxx
+MAINTAINER yhpeng
 
 # parameter load balancing, the modificatin is outdated for mxnet 1.0.0
 # COPY scripts/model.py /mxnet/python/mxnet/
@@ -25,7 +25,7 @@ COPY scripts/data_helpers.py /mxnet/example/cnn_text_classification/
 RUN mkdir -p /mxnet/example/cnn_text_classification/data
 
 # word vector DSSM
-COPY scripts/wordvec_subwords_dist.py /mxnet/example/nce-loss/
+# COPY scripts/wordvec_subwords_dist.py /mxnet/example/nce-loss/
 RUN mkdir -p /mxnet/example/nce-loss/data
 
 # speech recognition, need to recompile mxnet
